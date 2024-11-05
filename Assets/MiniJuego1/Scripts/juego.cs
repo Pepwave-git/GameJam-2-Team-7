@@ -8,14 +8,21 @@ public class juego : MonoBehaviour
 {
 
     public GameObject Terminado;
+    public GameObject Tiempo;
     public GameObject PiezaSeleccionada;   
     public int PiezasEncajadas = 0;
+    public AudioSource audioSource;
 
     [SerializeField] private ControladorTiempo controladorTiempo;
 
 
     void Start()
     {
+        audioSource.Play();
+        audioSource = GetComponent<AudioSource>();
+        Terminado.SetActive(false);
+        Tiempo.SetActive(true);
+        controladorTiempo = FindAnyObjectByType<ControladorTiempo>();
         controladorTiempo.ActivarTemporizador();
         for (int i = 0;i < 16; i++)
         {
@@ -52,6 +59,8 @@ public class juego : MonoBehaviour
         {
             controladorTiempo.DesactivarTemporizador();
             Terminado.SetActive(true);
+            audioSource.Pause();
+            Tiempo.SetActive(false);
         }
     }
 }

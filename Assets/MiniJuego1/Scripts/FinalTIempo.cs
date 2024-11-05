@@ -13,6 +13,6 @@ public class FinalTIempo : MonoBehaviour
 
     public void Regresar()
     {
-        Debug.Log("Regresaaaaar");
+        SceneManager.LoadScene(0);
     }
 }

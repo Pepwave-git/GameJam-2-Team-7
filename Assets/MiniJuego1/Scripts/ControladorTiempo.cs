@@ -12,8 +12,11 @@ public class ControladorTiempo : MonoBehaviour
 
     public GameObject FinalTiempo;
 
+    public juego juego;
+
     void Start()
     {
+        Time.timeScale = 1f;
         ActivarTemporizador();
         FinalTiempo.SetActive(false);
     }
@@ -41,6 +44,7 @@ public class ControladorTiempo : MonoBehaviour
             Debug.Log("Perdisteeeee");
             FinalTiempo.SetActive(true);
             CambiarTemporizador(false);
+            juego.audioSource.Pause();
         }
     }
 
