@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables; // Asegúrate de incluir esto para usar Timeline
 
-public class CinematicController : MonoBehaviour
+public class CinematicControllerGame : MonoBehaviour
 {
     public PlayableDirector director; // Referencia al PlayableDirector
 
@@ -20,6 +20,6 @@ public class CinematicController : MonoBehaviour
         // Espera hasta que la cinemática termine
         yield return new WaitForSeconds((float)director.duration);
         // Carga la escena del juego
-        SceneManager.LoadScene("InicioJuego");
+        SceneManager.LoadScene("EscenaPrincipal");
     }
 }
