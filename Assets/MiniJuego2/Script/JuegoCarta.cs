@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class JuegoCarta : MonoBehaviour
 {
     public GameObject Terminado;
+    public GameObject Tiempo;
     public GameObject PiezaSeleccionada;
     public int PiezasEncajadas = 0;
     public AudioSource audioSource;
@@ -24,6 +25,7 @@ public class JuegoCarta : MonoBehaviour
             GameObject.Find("Pieza" + i);
         }
         Terminado.SetActive(false);
+        Tiempo.SetActive(true); ;
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class JuegoCarta : MonoBehaviour
             controladorTiempo.DesactivarTemporizador();
             Terminado.SetActive(true);
             audioSource.Pause();
+            Tiempo.SetActive(false);
         }
 
 

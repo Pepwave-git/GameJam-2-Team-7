@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MiniJuego1/Scenes/Cuadro.unity
     guid: dabfa77bcc10bb347a27e97511e942e6
+  - enabled: 1
+    path: Assets/MiniJuego2/Escenes/Carta.unity
+    guid: 0c150bb11738fc344aeda27edc25dd07
   m_configObjects: {}

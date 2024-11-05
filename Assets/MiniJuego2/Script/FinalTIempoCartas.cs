@@ -8,11 +8,12 @@ public class FinalTIempoCarta : MonoBehaviour
 {
     public void Reintentar()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     public void Regresar()
     {
         Debug.Log("Regresaaaaar");
+        SceneManager.LoadScene(0);
     }
 }
