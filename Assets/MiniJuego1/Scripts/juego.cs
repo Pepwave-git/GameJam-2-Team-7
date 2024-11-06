@@ -9,7 +9,7 @@ public class juego : MonoBehaviour
 
     public GameObject Terminado;
     public GameObject Tiempo;
-    public GameObject PiezaSeleccionada;   
+    public GameObject PiezaSeleccionada;
     public int PiezasEncajadas = 0;
     public AudioSource audioSource;
 
@@ -20,10 +20,13 @@ public class juego : MonoBehaviour
     {
         audioSource.Play();
         audioSource = GetComponent<AudioSource>();
+
         Terminado.SetActive(false);
         Tiempo.SetActive(true);
+
         controladorTiempo = FindAnyObjectByType<ControladorTiempo>();
         controladorTiempo.ActivarTemporizador();
+
         for (int i = 0;i < 16; i++)
         {
             GameObject.Find("Pieza"+i);

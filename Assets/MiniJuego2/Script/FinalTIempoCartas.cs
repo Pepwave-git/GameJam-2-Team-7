@@ -8,12 +8,12 @@ public class FinalTIempoCarta : MonoBehaviour
 {
     public void Reintentar()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Carta");
     }
 
     public void Regresar()
     {
         Debug.Log("Regresaaaaar");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Room2");
     }
 }

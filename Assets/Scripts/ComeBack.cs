@@ -1,44 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class InteractionHandler : MonoBehaviour
+public class ComeBack : MonoBehaviour
 {
-    public GameObject confirmation;
     private bool isNearObject;
 
-
-    void start()
+    void Start()
     {
-        
+
     }
+
 
     void Update()
     {
         if (isNearObject && Input.GetKeyDown(KeyCode.E)) // Usa la tecla E para interactuar
         {
-            SceneManager.LoadScene("Room2");
+            SceneManager.LoadScene("EscenaPrincipal");
         }
     }
-
-
-    //public void OnConfirm()
-    //{
-        // Aquí puedes cargar la siguiente escena
-        //SceneManager.LoadScene("Room2");
-    //}
-
-    //public void OnCancel()
-    //{
-        //confirmation.SetActive(false);
-    //}
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            isNearObject = true; 
+            isNearObject = true;
         }
     }
 
@@ -47,6 +35,8 @@ public class InteractionHandler : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isNearObject = false;
+
         }
     }
 }
+

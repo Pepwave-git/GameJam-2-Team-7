@@ -3,6 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject instrucciones;
+    public GameObject creditos;
+
+    void start()
+    {
+        instrucciones.SetActive(false);
+        creditos.SetActive(false);
+    }
+
     public void StartGame()
     {
         // Cambia "IntroCinematic" por el nombre de la escena de la cinemática
@@ -11,11 +20,22 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
-        SceneManager.LoadScene("CreditsScene");
+        creditos.SetActive(true);
     }
 
-    public void QuitGame()
+    public void CloseCreditd()
     {
-        Application.Quit();
+        creditos.SetActive(false);
+
+    }
+
+    public void Instrucciones()
+    {
+        instrucciones.SetActive(true);
+    }
+
+    public void CloseInstr()
+    {
+        instrucciones.SetActive(false);
     }
 }

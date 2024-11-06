@@ -8,11 +8,11 @@ public class FinalTIempo : MonoBehaviour
 {
     public void Reintentar()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Cuadro");
     }
 
     public void Regresar()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Room2");
     }
 }

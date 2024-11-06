@@ -1,44 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class InteractionHandler : MonoBehaviour
+public class MiniJuego2 : MonoBehaviour
 {
-    public GameObject confirmation;
     private bool isNearObject;
+    public GameObject miniTwo;
 
-
-    void start()
+    void Start()
     {
-        
+        miniTwo.SetActive(false);
     }
+
 
     void Update()
     {
         if (isNearObject && Input.GetKeyDown(KeyCode.E)) // Usa la tecla E para interactuar
         {
-            SceneManager.LoadScene("Room2");
+            miniTwo.SetActive(true);
         }
     }
 
-
-    //public void OnConfirm()
-    //{
+    public void OnConfirm2()
+    {
         // Aquí puedes cargar la siguiente escena
-        //SceneManager.LoadScene("Room2");
-    //}
+        SceneManager.LoadScene("Carta");
+    }
 
-    //public void OnCancel()
-    //{
-        //confirmation.SetActive(false);
-    //}
+    public void OnCancel2()
+    {
+        miniTwo.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            isNearObject = true; 
+            isNearObject = true;
         }
     }
 
